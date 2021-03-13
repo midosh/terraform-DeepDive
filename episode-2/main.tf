@@ -1,12 +1,11 @@
 terraform {
-
   backend "remote" {
     organization = "mido"
+
     workspaces {
-      name = "terraform-DeepDive"
+      name = "terraform-demo"
     }
   }
-
 }
 
 
