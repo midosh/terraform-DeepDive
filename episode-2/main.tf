@@ -1,4 +1,16 @@
 terraform {
+
+  backend "remote" {
+    organization = "mido"
+    workspaces {
+      name = "terraform-DeepDive"
+    }
+  }
+
+}
+
+
+terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
