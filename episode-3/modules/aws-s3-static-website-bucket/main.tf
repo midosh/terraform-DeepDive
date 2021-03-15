@@ -30,3 +30,22 @@ EOF
 
   tags = var.tags
 }
+
+resource "aws_s3_bucket_object" "object_index" {
+  acl          = "public-read"
+  key          = "index.html"
+  bucket       = aws_s3_bucket.s3_bucket.id
+  source       = "assets/index.html"
+  etag         = filemd5("assets/index.html")
+
+}
+
+resource "aws_s3_bucket_object" "object_error" {
+  acl          = "public-read"
+  key          = "error.html"
+  bucket       = aws_s3_bucket.s3_bucket.id
+  source       = "assets/error.html"
+  etag         = filemd5("assets/error.html")
+
+}
+
